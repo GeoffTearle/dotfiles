@@ -1,0 +1,26 @@
+{
+    "workbench.colorTheme": "Monokai Dimmed",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'fira-code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.renderWhitespace": "all",
+    "editor.codeLens": false,
+    "editor.bracketPairColorization.enabled": true,
+    "vim.easymotion": true,
+    "vim.highlightedyank.enable": true,
+    "vim.hlsearch": true,
+    "vim.showMarksInGutter": true,
+    "vim.smartRelativeLine": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "files.associations": {
+        ".ideavimrc": "vimrc"
+    },
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc",
+    "vim.leader": " ",
+    "vim.enableNeovim": true,
+    "vim.neovimUseConfigFile": true,
+    "extensions.ignoreRecommendations": true
+}
