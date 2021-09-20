@@ -1,0 +1,44 @@
+nmap <Space> <Leader>
+" let mapleader=" "
+
+" highlight matched
+set hlsearch
+
+" case insensitive search
+set ignorecase
+set smartcase
+
+" search while typing
+set incsearch
+
+" wrap-around when searching
+set wrapscan
+
+" show pressed keys in lower right corner
+set showcmd
+
+set autoindent
+set smarttab
+set backspace indent,eol,start
+
+" tab -> spaces
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+" keep a 5 line buffer for the cursor from top/bottom of window
+set scrolloff=5
+
+" use ~ with movement
+set tildeop
+
+" mappings
+
+" clear highlighted search term on space
+" noremap <silent> <Space> :nohls<CR>
+
+" reselect visual block after indent
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <Leader>t :e<CR>

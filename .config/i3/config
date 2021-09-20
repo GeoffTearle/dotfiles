@@ -1,0 +1,281 @@
+#############################################################################
+#
+#				i3 config file
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+#############################################################################
+
+#############################################################################
+#
+#			Top level bindings
+#
+#############################################################################
+
+set $mod Mod4
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+workspace $ws1 output DSI-1
+
+# kill focused window
+bindsym $mod+c kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Multimedia Keys
+# volume
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- 
+# granular volume control
+bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ 
+bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%-
+
+# Backlight keys
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+
+# Teminal
+bindsym $mod+Return exec kitty
+
+# power menu
+# bindsym XF86PowerOff exec --no-startup-id exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.sh -show system -theme themes/system-menu
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec rofi -modi drun -show drun -line-padding 4 \
+			-columns 2 -padding 50 -hide-scrollbar \
+			-show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"; mode "default"
+
+# Window switcher
+ bindsym $mod+o exec rofi -show window -line-padding 4 \
+	-lines 6 -padding 50 -hide-scrollbar \
+	-show-icons -drun-icon-theme "Arc-X-D" -font "Droid Sans Regular 10"; mode "default"
+
+# bindsym $mod+b exec --no-startup-id rofi-bluetooth
+
+bindsym $mod+space mode "command"
+
+###############################################################################
+#
+#				Modes
+#
+##############################################################################
+
+# resize, and move, windows (you can also use the mouse for that)
+mode "resize/move" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter, Escape, or q
+        bindsym q mode "command"
+        bindsym Escape mode "command"
+        bindsym Return mode "command"
+}
+
+mode "command" {
+	bindsym r mode "resize/move"
+	#
+	# Lock screen
+	#bindsym l exec --no-startup-id betterlockscreen -l; mode "default"
+	
+	# reload the configuration file
+	bindsym Shift+c restart; mode "default"
+
+	# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+        bindsym c reload; mode "default"
+
+        bindsym Shift+h split h
+        bindsym Shift+v split v
+	
+	# change container layout (stacked, tabbed, toggle split)
+	bindsym s layout stacking
+	bindsym t layout tabbed
+	bindsym e layout toggle split
+
+	# toggle tiling / floating
+	bindsym Shift+space floating toggle
+
+	# change focus between tiling / floating windows
+	bindsym space focus mode_toggle
+
+	# move focused container to workspace
+	bindsym Shift+1 move container to workspace $ws1
+	bindsym Shift+2 move container to workspace $ws2
+	bindsym Shift+3 move container to workspace $ws3
+	bindsym Shift+4 move container to workspace $ws4
+	bindsym Shift+5 move container to workspace $ws5
+	bindsym Shift+6 move container to workspace $ws6
+	bindsym Shift+7 move container to workspace $ws7
+	bindsym Shift+8 move container to workspace $ws8
+	bindsym Shift+9 move container to workspace $ws9
+	bindsym Shift+0 move container to workspace $ws10
+
+        bindsym Left workspace prev
+        bindsym Right workspace next
+        bindsym Shift+Left move container to workspace prev
+        bindsym Shift+Right move container to workspace next
+        bindsym h workspace prev
+        bindsym l workspace next
+        bindsym Shift+h move container to workspace prev
+        bindsym Shift+l move container to workspace next
+
+        bindsym q mode "default"
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
+}
+
+#############################################################################
+#
+#			Workspace Layouts
+#
+#############################################################################
+
+# Back and forth
+# workspace_auto_back_and_forth yes
+
+# Colors
+# Fill the bg before feh with black
+client.background #000
+
+# Gaps
+gaps inner 10
+gaps outer 0
+# smart_gaps on
+
+for_window [class="^.*"] border pixel 0
+
+# workspace layouts:
+
+workspace_layout default
+# default i3 tiling mode
+
+# workspace_layout stacking
+
+# workspace_layout tabbed
+# Tiling mode is tabbed:
+# so each new window will open fullscreen as a tab, you can change between window-tabs with mouse or shortcut:
+#
+#    [mod]+Left focus left (left arrow key)
+#    [mod]+Right focus right (right arrow key)
+
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Noto Sans Regular 8
+
+# thin borders
+hide_edge_borders both
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+#set floating (nontiling) for special apps
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+
+###############################################################################
+#
+#				Plasma Integration
+#
+##############################################################################
+
+# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
+# exec --no-startup-id wmctrl -c Plasma
+# for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+## Avoid tiling popups, dropdown windows from plasma
+# for the first time, manually resize them, i3 will remember the setting for floating windows
+for_window [class="yakuake"] floating enable;
+for_window [class="plasmashell"] floating enable;
+for_window [class="systemsettings"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+
+# for_window [class="plasmashell" window_type="notification"] border none, move position 720 28
+# for_window [class="plasmashell" window_type="on_screen_display"] border none, move position 499 310
+# for_window [class="plasmashell" window_type="dialog"] border none, move position 832 28
+
+# Plasma compatibility improvements
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+#---( focus related )---)
+
+focus_follows_mouse no
+
+no_focus [class="plasmashell" window_type="on_screen_display"]
+no_focus [window_role="pop-up"]
+no_focus [window_type="notification"]
+
+###############################################################################
+#
+#				Autostart apps
+#
+##############################################################################
+
+#transparency 
+exec --no-startup-id picom
+
+#hides the mouse cursor when not in use
+exec --no-startup-id unclutter --fork
