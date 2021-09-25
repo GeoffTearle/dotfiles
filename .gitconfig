@@ -1,0 +1,16 @@
+[core]
+	editor = nvim
+[user]
+	name = Geoff Tearle
+	email = 18473961+GeoffTearle@users.noreply.github.com
+[init]
+	defaultBranch = main
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[interactive]
+	diffFilter = delta --color-only
+[include]
+	path = ~/dotfiles/delta/.gitconfig

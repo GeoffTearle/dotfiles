@@ -18,7 +18,7 @@ antigen bundles <<EOBUNDLES
   belak/zsh-utils utility
   belak/zsh-utils history
   belak/zsh-utils completion
-  chrissicool/zsh-bash
+#  chrissicool/zsh-bash
 EOBUNDLES
 antigen apply
 

@@ -18,3 +18,4 @@ export PLATFORM_SDK_ROOT=/srv/mer
 alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export PAGER=bat
