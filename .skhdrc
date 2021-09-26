@@ -148,6 +148,4 @@
 #           yabai -m window --toggle pip
 
 
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~ --config ~/.config/kitty/mac.conf
-
-cmd + shift - k : pid="$(yabai -m query --windows --window | jq '.pid')" && kill ${pid}
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~ --config ~/.config/kitty/mac.conf

@@ -14,3 +14,7 @@
 	diffFilter = delta --color-only
 [include]
 	path = ~/dotfiles/delta/.gitconfig
+[include]
+	path = ~/.gitconfig.local
+[url "git@github.com:"]
+	insteadOf = https://github.com/
