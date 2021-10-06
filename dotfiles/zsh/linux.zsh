@@ -1,3 +1,4 @@
+# setup ssh agent
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
 	  eval `ssh-agent`
 	    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
@@ -5,6 +6,7 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
 
+# rate mirrors alias's
 alias ua-drop-caches='sudo paccache -rk3; yay -Sc --aur --noconfirm'
 alias ua-update-all='export TMPFILE="$(mktemp)"; \
     sudo true; \
@@ -14,8 +16,12 @@ alias ua-update-all='export TMPFILE="$(mktemp)"; \
       && ua-drop-caches \
       && yay'
 
+alias yay-remove-orphans "yay -Qtdq | yay -Rns -"
+
+# SailfishOS Platform SDK stuff
 export PLATFORM_SDK_ROOT=/srv/mer
 alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot
 
+# delta + bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PAGER=bat
