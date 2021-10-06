@@ -18,10 +18,7 @@ alias ua-update-all='export TMPFILE="$(mktemp)"; \
 
 alias yay-remove-orphans "yay -Qtdq | yay -Rns -"
 
-# SailfishOS Platform SDK stuff
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
 export PLATFORM_SDK_ROOT=/srv/mer
 alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot
-
-# delta + bat
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export PAGER=bat
