@@ -1,0 +1,12 @@
+[module/memory]
+type = internal/memory
+interval = 2
+format = <label>
+format-background = ${colors.secondary}
+format-foreground = ${colors.tertiary}
+format-padding = 1
+
+format-prefix = " "
+
+label = %percentage_used%%  %percentage_swap_used%%
+

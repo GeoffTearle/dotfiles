@@ -1,0 +1,4 @@
+[bar/top]
+inherit = bar/base
+bottom = false
+

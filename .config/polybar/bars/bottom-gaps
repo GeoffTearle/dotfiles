@@ -1,0 +1,18 @@
+include-file = ~/.config/polybar/modules/power-menu
+include-file = ~/.config/polybar/modules/caps-lock 
+include-file = ~/.config/polybar/modules/i3
+
+include-file = ~/.config/polybar/modules/cpu
+include-file = ~/.config/polybar/modules/memory
+include-file = ~/.config/polybar/modules/network-wifi
+include-file = ~/.config/polybar/modules/network-ethernet
+
+[bar/bottom-gaps]
+inherit = bar/bottom
+
+capslock-background = ${colors.secondary}
+capslock-foreground = ${colors.tertiary}
+
+modules-left = power-menu ddlP durS caps-lock ddlS durT i3 ddlT
+modules-right = ddrT cpu dulT ddrS memory dulS ddrT network-wifi network-ethernet ddrP
+

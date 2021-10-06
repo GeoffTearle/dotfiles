@@ -1,0 +1,12 @@
+[module/arch-icon]
+type = custom/script
+exec = uname -r | cut -d- -f1
+interval = 999999999
+
+format =  <label>
+format-background = ${root.arch-icon-background}
+format-foreground = ${root.arch-icon-foreground}
+format-padding = 1
+label = %output%
+label-font = 2
+

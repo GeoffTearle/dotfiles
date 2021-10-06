@@ -1,0 +1,7 @@
+[Unit]
+Description=picom, standalone compositor for Xorg 
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/picom
+Restart=on-failure

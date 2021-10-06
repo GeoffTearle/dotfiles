@@ -1,0 +1,7 @@
+[Unit]
+Description=hides the mouse cursor in X after a period of inactivity
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/unclutter
+Restart=on-failure

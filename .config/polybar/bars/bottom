@@ -1,0 +1,7 @@
+[bar/bottom]
+inherit = bar/base
+bottom = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+

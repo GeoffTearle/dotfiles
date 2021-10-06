@@ -1,0 +1,32 @@
+[module/network-ethernet]
+type = internal/network
+interface = eno1
+interval = 3.0
+ping-interval = 0
+accumulate-stats = true
+
+format-connected = <label-connected>
+format-connected-background = ${colors.tertiary}
+format-connected-padding = 1
+
+format-connected-prefix = " "
+
+label-connected = %downspeed%
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${colors.tertiary}
+format-disconnected-padding = 1
+
+label-disconnected =  Offline
+label-disconnected-foreground = ${colors.urgency}
+
+format-packet-loss = <animation-packetloss> <label-packetloss>
+format-packet-loss-background = ${colors.tertiary}
+format-packet-loss-padding = 1
+label-packetloss = Packet loss
+label-packetloss-foreground = ${colors.urgency}
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.urgency}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.primary}
+

@@ -1,0 +1,34 @@
+[module/network-wifi]
+type = internal/network
+interface = wlp1s0
+interval = 3.0
+ping-interval = 0
+accumulate-stats = true
+
+format-connected = <label-connected>
+format-connected-background = ${colors.tertiary}
+format-connected-padding = 1
+format-connected-prefix = "直 "
+
+label-connected = %downspeed%
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${colors.tertiary}
+format-disconnected-padding = 1
+
+format-disconnected-prefix = "睊 "
+format-disconnected-foreground = ${colors.urgency}
+
+label-disconnected = Offline
+
+format-packet-loss = <animation-packetloss> <label-packetloss>
+format-packet-loss-background = ${colors.tertiary}
+format-packet-loss-padding = 1
+label-packetloss = Packet loss
+label-packetloss-foreground = ${colors.urgency}
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.urgency}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.primary}
+
+

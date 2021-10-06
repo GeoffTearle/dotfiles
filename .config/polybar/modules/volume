@@ -1,0 +1,27 @@
+[module/volume]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+use-ui-max = true
+interval = 5
+
+format-volume-background = ${root.volume-background}
+format-volume-foreground = ${root.volume-foreground}
+
+format-muted-background = ${root.volume-background}
+format-muted-foreground = ${root.volume-foreground}
+format-muted-prefix-foreground = ${root.volume-muted-prefix-foreground}
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+
+label-volume = %percentage:3%%
+
+format-muted = <label-muted>
+format-muted-padding = 1
+format-muted-prefix = "婢  "
+label-muted = N/A
+

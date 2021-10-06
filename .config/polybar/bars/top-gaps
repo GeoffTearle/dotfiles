@@ -1,0 +1,41 @@
+include-file = ~/.config/polybar/modules/arch-icon
+include-file = ~/.config/polybar/modules/backlight
+include-file = ~/.config/polybar/modules/window-title
+
+include-file = ~/.config/polybar/modules/volume
+include-file = ~/.config/polybar/modules/available-updates
+include-file = ~/.config/polybar/modules/battery
+include-file = ~/.config/polybar/modules/date-time
+
+[bar/top-gaps]
+inherit = bar/top
+
+arch-icon-background = ${colors.primary}
+arch-icon-foreground = ${colors.tertiary}
+
+backlight-background = ${colors.secondary}
+backlight-foreground = ${colors.tertiary}
+
+window-title-foreground = 
+window-title-background = ${colors.tertiary}
+
+date-time-background = ${colors.primary}
+date-time-foreground = ${colors.tertiary}
+
+available-updates-background = ${colors.tertiary}
+available-updates-foreground = 
+
+volume-background = ${colors.secondary}
+volume-foreground = ${colors.tertiary}
+volume-muted-prefix-foreground = ${colors.tertiary}
+
+battery-background = ${colors.primary}
+battery-foreground = ${colors.tertiary}
+battery-low-foreground =${colors.urgency}
+
+modules-left = arch-icon dulP ddrS backlight dulS ddrT window-title dulT
+
+modules-center = durP date-time dulP
+
+modules-right = durT available-updates ddlT durS volume ddlS durP battery
+

@@ -1,0 +1,50 @@
+[module/battery]
+type = internal/battery
+full-at = 100
+battery = BAT0
+adapter = AC0
+
+label-charging-font = 2
+label-discharging-font = 2
+label-full-font = 2
+
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding = 1
+
+format-background = ${root.battery-background}
+format-foreground = ${root.battery-foreground}
+
+format-full-background = ${root.battery-background}
+format-full-foreground = ${root.battery-foreground}
+
+format-charging-background = ${root.battery-background}
+format-charging-foreground = ${root.battery-foreground}
+
+format-discharging-background = ${root.battery-background}
+format-discharging-foreground = ${root.battery-foreground}
+
+format-full =  <label-full> 
+label-full = 100%
+
+format-charging = <animation-charging> <label-charging>
+format-charging-prefix = " "
+format-charging-prefix-foreground = ${xrdb:color11}
+label-charging = %percentage:3%%
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage:3%%
+ramp-capacity-0-foreground = ${root.battery-low-foreground}
+ramp-capacity-1-foreground = ${root.battery-low-foreground}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
