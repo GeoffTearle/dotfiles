@@ -5,7 +5,7 @@ format = <label>
 format-background = ${colors.tertiary}
 format-padding = 1
 
-format-prefix = " "
+format-prefix = " "
 
-label = %percentage%%
+label = %percentage:3%%
 

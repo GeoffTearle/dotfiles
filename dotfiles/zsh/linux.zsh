@@ -16,7 +16,7 @@ alias ua-update-all='export TMPFILE="$(mktemp)"; \
       && ua-drop-caches \
       && yay'
 
-alias yay-remove-orphans "yay -Qtdq | yay -Rns -"
+alias yay-remove-orphans='yay -Qtdq | yay -Rns -'
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 

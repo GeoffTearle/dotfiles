@@ -32,6 +32,7 @@ volume-muted-prefix-foreground = ${colors.tertiary}
 battery-background = ${colors.primary}
 battery-foreground = ${colors.tertiary}
 battery-low-foreground =${colors.urgency}
+battery-charging-foreground = ${xrdb:color11}
 
 modules-left = arch-icon dulP ddrS backlight dulS ddrT window-title dulT
 

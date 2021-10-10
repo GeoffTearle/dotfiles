@@ -3,3 +3,6 @@ Description=X session
 BindsTo=graphical-session.target
 Wants=picom.service
 Wants=unclutter.service
+Wants=lxpolkit.service
+Wants=polybar.service
+

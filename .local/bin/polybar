@@ -1,0 +1,30 @@
+
+#!/bin/sh
+
+MONITORS=$(xrandr --current --listactivemonitors | sed -nE 's/ *([0-9]+): [+*]*([^ ]*).*/\2/p' | tr '\n' ' ')
+PRIMARY=$(xrandr --current --listactivemonitors | sed -nE 's/ *([0-9]+): [+]?[*]([^ ]*).*/\2/p')
+NMONITORS=$(echo $MONITORS | wc -w)
+PRIMARY=${PRIMARY:-${MONITORS%% *}}
+
+awk 'BEGIN { i=0 } ($4 == "/" && $3 !~ /^0:/) {print "mount-"i" = "$5; i++}' /proc/self/mountinfo \
+    > $XDG_RUNTIME_DIR/i3/polybar-filesystems.conf
+
+case $NMONITORS in
+    1)
+        MONITOR=$PRIMARY polybar --reload top-gaps &
+        MONITOR=$PRIMARY polybar --reload bottom-gaps &
+        systemd-notify --status="Single polybar instance running on $PRIMARY"
+        ;;
+    *)
+        MONITOR=$PRIMARY polybar --reload primary &
+        for MONITOR in ${MONITORS}; do
+            [ $MONITOR != $PRIMARY ] || continue
+            MONITOR=$MONITOR polybar --reload secondary &
+        done
+        systemd-notify --status="$NMONITORS polybar instances running"
+        ;;
+esac
+
+systemd-notify --ready
+trap "systemd-notify WATCHDOG=trigger" CHLD
+wait

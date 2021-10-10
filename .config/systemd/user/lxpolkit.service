@@ -1,0 +1,7 @@
+[Unit]
+Description=lxpolkit
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/lxpolkit
+Restart=on-failure

@@ -1,0 +1,11 @@
+[Unit]
+Description=Status bar for i3
+PartOf=graphical-session.target
+
+[Service]
+Type=notify
+NotifyAccess=all
+WatchdogSignal=SIGTERM
+ExecStart=sh -c "%h/.local/bin/polybar"
+ExecStop=/usr/bin/polybar-msg cmd quit
+Restart=on-failure
