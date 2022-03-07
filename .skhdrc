@@ -148,4 +148,4 @@
 #           yabai -m window --toggle pip
 
 
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~ --config ~/.config/kitty/mac.conf
+cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~ --config ~/.config/kitty/mac.conf --start-as maximized

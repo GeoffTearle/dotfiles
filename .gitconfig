@@ -1,5 +1,6 @@
 [core]
 	editor = nvim
+	excludesfile = /Users/geoffreyt/.gitignore_global
 [user]
 	name = Geoff Tearle
 	email = 18473961+GeoffTearle@users.noreply.github.com
@@ -18,3 +19,11 @@
 	path = ~/.gitconfig.local
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/geoffreyt/.stCommitMsg
