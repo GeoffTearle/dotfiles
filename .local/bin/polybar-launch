@@ -16,11 +16,12 @@ case $NMONITORS in
         systemd-notify --status="Single polybar instance running on $PRIMARY"
         ;;
     *)
-        MONITOR=$PRIMARY polybar --reload primary &
-        for MONITOR in ${MONITORS}; do
-            [ $MONITOR != $PRIMARY ] || continue
-            MONITOR=$MONITOR polybar --reload secondary &
-        done
+        MONITOR=$PRIMARY polybar --reload top-gaps &
+        MONITOR=$PRIMARY polybar --reload bottom-gaps &
+        #for MONITOR in ${MONITORS}; do
+        #    [ $MONITOR != $PRIMARY ] || continue
+        #    MONITOR=$MONITOR polybar --reload secondary &
+        #done
         systemd-notify --status="$NMONITORS polybar instances running"
         ;;
 esac

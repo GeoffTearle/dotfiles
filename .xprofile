@@ -27,3 +27,6 @@ xcape -e 'Hyper_L=backslash|bar' -t 175
 xmodmap -e 'keycode 61 = Super_R'
 xmodmap -e 'keycode any = slash question'
 xcape -e 'Super_R=slash|question' -t 175
+
+# keyboard debounce
+xkbset bo 80

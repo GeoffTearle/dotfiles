@@ -6,6 +6,6 @@ PartOf=graphical-session.target
 Type=notify
 NotifyAccess=all
 WatchdogSignal=SIGTERM
-ExecStart=sh -c "%h/.local/bin/polybar"
+ExecStart=sh -c "%h/.local/bin/polybar-launch"
 ExecStop=/usr/bin/polybar-msg cmd quit
 Restart=on-failure

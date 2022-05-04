@@ -22,5 +22,6 @@
     "vim.leader": " ",
     "vim.enableNeovim": true,
     "vim.neovimUseConfigFile": true,
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "explorer.confirmDelete": false
 }

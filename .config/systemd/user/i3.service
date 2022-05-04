@@ -1,7 +1,7 @@
 [Unit]
 Description=i3 window manager
 PartOf=graphical-session.target
-After=xsession.target
+Before=xsession.target
 Wants=xsession.target
 
 [Service]

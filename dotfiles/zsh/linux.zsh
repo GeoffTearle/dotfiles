@@ -20,3 +20,9 @@ alias yay-remove-orphans='yay -Qtdq | yay -Rns -'
 
 export PLATFORM_SDK_ROOT=/srv/mer
 alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot
+alias sfdk=$HOME/SailfishOS/bin/sfdk
+export PATH=$PATH:~/.local/bin
+
+autoload bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pmbootstrap)"

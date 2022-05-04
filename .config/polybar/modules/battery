@@ -28,7 +28,7 @@ format-full = "  <label-full> "
 label-full = 100%
 
 format-charging = <animation-charging><label-charging>
-format-charging-prefix = " "
+format-charging-prefix = ""
 format-charging-prefix-foreground = ${root.battery-charging-foreground}
 label-charging = " %percentage:3%% "
 animation-charging-0 =" "
