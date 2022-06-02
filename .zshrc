@@ -11,8 +11,10 @@ source ~/dotfiles/zsh/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
-  zsh-users/zsh-autosuggestions
+  docker
+  command-not-found
   zsh-users/zsh-completions
+  zsh-users/zsh-autosuggestions
   zsh-users/zsh-syntax-highlighting
   belak/zsh-utils editor
   belak/zsh-utils utility
