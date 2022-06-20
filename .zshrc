@@ -37,5 +37,5 @@ alias ssh="kitty +kitten ssh"
 
 # exa
 alias ls="exa --icons"
-alias ll="exa -l -g --icons"
-alias la="exa -l -a -g --icons"
+alias ll="exa --long --group --icons --header --git"
+alias la="exa --long --all --group --icons --header --git"
