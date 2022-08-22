@@ -24,6 +24,8 @@ antigen bundles <<EOBUNDLES
 EOBUNDLES
 antigen apply
 
+
+source ~/.local.zsh
 source ~/dotfiles/zsh/platform-specific.zsh
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
