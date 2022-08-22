@@ -1,4 +1,4 @@
-# import shared bindings
+" import shared bindings
 source ~/.vimrc
 
 set NERDTree
@@ -7,13 +7,6 @@ set commentary
 set ideajoin
 
 set highlightedyank
-
-# suppress annoying sounds
-set visualbell
-set noerrorbells
-
-# set relativenumber
-set number
 
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
@@ -25,15 +18,15 @@ nnoremap <Leader>E :action GotoPreviousError<CR>
 
 nnoremap <Leader>r :action RenameElement<CR>
 
-# surround selection in normal and visual
+" surround selection in normal and visual
 nnoremap <Leader>s :action SurroundWith<CR>
 vnoremap <Leader>s :action SurroundWith<CR>
 
-# intro variable in normal and visual
+" intro variable in normal and visual
 nnoremap <Leader>v :action IntroduceVariable<CR>
 vnoremap <Leader>v :action IntroduceVariable<CR>
 
-# Extract method in normal and visual
+" Extract method in normal and visual
 nnoremap <Leader>m :action ExtractMethod<CR>
 vnoremap <Leader>m :action ExtractMethod<CR>
 

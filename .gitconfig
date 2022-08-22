@@ -1,6 +1,7 @@
 [core]
 	editor = nvim
 	excludesfile = /Users/geoffreyt/.gitignore_global
+	pager = delta
 [user]
 	name = Geoff Tearle
 	email = 18473961+GeoffTearle@users.noreply.github.com
@@ -21,3 +22,10 @@
 	insteadOf = https://github.com/
 [pull]
 	rebase = false
+[push]
+	autoSetupRemote = true
+[diff]
+	algorithm = histogram
+	colorMoved = default
+[merge]
+	conflictstyle = diff3
