@@ -35,7 +35,12 @@ eval "$(starship init zsh)"
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 
+# ssh
 alias ssh="kitty +kitten ssh"
+
+# terminal images
+alias icat="kitty +kitten icat"
+
 
 # exa
 alias ls="exa --icons"
