@@ -29,4 +29,5 @@ xmodmap -e 'keycode any = slash question'
 xcape -e 'Super_R=slash|question' -t 175
 
 # keyboard debounce
-xkbset bo 80
+xkbset exp 999 \=b \=r \=m \=ma \=a \=st \=twokey \=latchlock \=sl \=bo \=f \=dumbbell \=led \=feature \=slowwarn \=slowpress \=slowaccept \=slowreject \=slowrelease \=bouncereject \=stickybeep \=ov1 \=ov2 \=ignoregrouplock
+xkbset bo 75
