@@ -20,6 +20,7 @@ antigen bundles <<EOBUNDLES
   belak/zsh-utils utility
   belak/zsh-utils history
   belak/zsh-utils completion
+  wfxr/forgit
 #  chrissicool/zsh-bash
 EOBUNDLES
 antigen apply
@@ -34,6 +35,7 @@ export PAGER="bat --style='changes,rule'"
 eval "$(starship init zsh)"
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
 
 # ssh
 alias ssh="kitty +kitten ssh"
