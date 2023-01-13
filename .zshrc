@@ -35,7 +35,7 @@ export PAGER="bat --style='changes,rule'"
 eval "$(starship init zsh)"
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-export PATH="$PATH:$FORGIT_INSTALL_DIR/bin"
+export PATH="$PATH:$HOME/.antigen/bundles/wfxr/forgit/bin" # cant seem to get the antigen vars to work
 
 # ssh
 alias ssh="kitty +kitten ssh"
