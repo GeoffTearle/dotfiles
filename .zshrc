@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export DO_NOT_TRACK=1
+
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
 source ~/dotfiles/zsh/antigen.zsh
