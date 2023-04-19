@@ -148,4 +148,5 @@
 #           yabai -m window --toggle pip
 
 
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~ --single-instance --start-as maximized
+# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~ --single-instance --start-as maximized
+cmd - return : wezterm start --always-new-process
