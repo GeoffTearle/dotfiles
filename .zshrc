@@ -11,18 +11,24 @@ ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
 source ~/dotfiles/zsh/antigen.zsh
 
+autoload -Uz +X compinit && compinit
+
+## case insensitive path-completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+
 antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
   docker
   command-not-found
-  zsh-users/zsh-completions
-  zsh-users/zsh-autosuggestions
-  zsh-users/zsh-syntax-highlighting
   belak/zsh-utils editor
   belak/zsh-utils utility
   belak/zsh-utils history
   belak/zsh-utils completion
   wfxr/forgit
+  zsh-users/zsh-completions
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-syntax-highlighting
 #  chrissicool/zsh-bash
 EOBUNDLES
 antigen apply
@@ -36,15 +42,15 @@ export PAGER="bat --style='changes,rule'"
 
 eval "$(starship init zsh)"
 
-export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+case $(uname) in
+  Linux)
+  ;;
+  Darwin)
+	export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+  ;;
+esac
+
 export PATH="$PATH:$HOME/.antigen/bundles/wfxr/forgit/bin" # cant seem to get the antigen vars to work
-
-# ssh
-alias ssh="kitty +kitten ssh"
-
-# terminal images
-alias icat="kitty +kitten icat"
-
 
 # exa
 alias ls="exa --icons"

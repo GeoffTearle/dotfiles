@@ -25,7 +25,7 @@ config.font = wezterm.font {
 	weight = 'Medium'
 }
 
-config.font_size = 14
+config.font_size = 11
 
 config.window_background_opacity = 0.5
 config.window_decorations = "RESIZE"

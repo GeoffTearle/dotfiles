@@ -1,7 +1,7 @@
 
 case $(uname) in
   Linux)
-	# do nothing
+	source .profile
   ;;
   Darwin)
 	eval "$(/opt/homebrew/bin/brew shellenv)"
