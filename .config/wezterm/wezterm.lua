@@ -26,6 +26,9 @@ config.font = wezterm.font {
 }
 
 config.font_size = 11
+if wezterm.target_triple == 'aarch64-apple-darwin' then
+	config.font_size = 13
+end
 
 config.window_background_opacity = 0.5
 config.window_decorations = "RESIZE"

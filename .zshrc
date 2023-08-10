@@ -42,13 +42,6 @@ export PAGER="bat --style='changes,rule'"
 
 eval "$(starship init zsh)"
 
-case $(uname) in
-  Linux)
-  ;;
-  Darwin)
-	export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-  ;;
-esac
 
 export PATH="$PATH:$HOME/.antigen/bundles/wfxr/forgit/bin" # cant seem to get the antigen vars to work
 
@@ -56,3 +49,15 @@ export PATH="$PATH:$HOME/.antigen/bundles/wfxr/forgit/bin" # cant seem to get th
 alias ls="exa --icons"
 alias ll="exa --long --group --icons --header --git"
 alias la="exa --long --all --group --icons --header --git"
+
+case $(uname) in
+  Linux)
+  ;;
+  Darwin)
+	## Dumping ground for work required programs that love to dump stuff in my rc's
+	export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+	source /Users/geoffreyt/.docker/init-zsh.sh || true # Added by Docker Desktop
+  ;;
+esac
+
+source /Users/geoffreyt/.docker/init-zsh.sh || true # Added by Docker Desktop
