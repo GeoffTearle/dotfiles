@@ -59,5 +59,3 @@ case $(uname) in
 	source /Users/geoffreyt/.docker/init-zsh.sh || true # Added by Docker Desktop
   ;;
 esac
-
-source /Users/geoffreyt/.docker/init-zsh.sh || true # Added by Docker Desktop
