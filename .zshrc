@@ -52,6 +52,7 @@ alias la="exa --long --all --group --icons --header --git"
 
 case $(uname) in
   Linux)
+	  export GOPATH="$(go env GOPATH)"; export GOROOT="$(go env GOROOT)"; export PATH="$GOPATH/bin:$PATH";
   ;;
   Darwin)
 	## Dumping ground for work required programs that love to dump stuff in my rc's
