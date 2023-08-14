@@ -29,7 +29,7 @@ M.monokaipro = function()
           'renamer',
           'notify',
           -- "nvim-tree",
-          -- "neo-tree",
+          -- 'neo-tree',
           -- "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
         }, -- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
         plugins = {
@@ -38,7 +38,7 @@ M.monokaipro = function()
             underline_visible = false,
           },
           indent_blankline = {
-            context_highlight = 'default', -- default | pro
+            context_highlight = 'pro', -- default | pro
             context_start_underline = false,
           },
         },
