@@ -34,13 +34,16 @@ M.monokaipro = function()
         }, -- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree", "nvim-tree", "bufferline"
         plugins = {
           bufferline = {
-            underline_selected = false,
+            underline_selected = true,
             underline_visible = false,
+            underline_fill = true,
+            bold = false,
           },
           indent_blankline = {
             context_highlight = 'pro', -- default | pro
-            context_start_underline = false,
+            context_start_underline = true,
           },
+          neotree = {},
         },
         override = function(c) end,
       })

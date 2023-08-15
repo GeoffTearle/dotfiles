@@ -22,6 +22,8 @@ require('lazy').setup({
 
     -- colour theme
     require('plugins.monokai-pro').monokaipro(),
+    require('plugins.rainbow-delimiters').rainbow_delimiters(),
+    require('plugins.indent-blankline').indent_blankline(),
 
     -- save my last cursor position
     require('plugins.lastplace').lastplace(),
@@ -52,8 +54,6 @@ require('lazy').setup({
 
     -- autocompletion
     require('plugins.cmp').cmp(),
-
-    require('plugins.rainbow-delimiters').rainbow_delimiters(),
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
