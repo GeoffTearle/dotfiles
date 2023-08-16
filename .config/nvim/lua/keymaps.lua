@@ -13,7 +13,6 @@ vim.g.maplocalleader = ' '
 -- Normal mode
 
 map('n', '<Leader>;', 'A;', opts)
-map('n', '<C-a>;', 'ggVG', opts)
 
 -- Better split switching
 map('', '<C-j>', '<C-W>j')
