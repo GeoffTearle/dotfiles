@@ -4,7 +4,6 @@ M.formatter = function()
   return {
     'mhartington/formatter.nvim',
     config = function()
-
       require('formatter').setup({
         -- All formatter configurations are opt-in
         filetype = {

@@ -4,6 +4,7 @@ M.rainbow_delimiters = function()
   return {
     'hiphish/rainbow-delimiters.nvim',
     config = function()
+
       local rainbow_delimiters = require('rainbow-delimiters')
 
       require('rainbow-delimiters.setup')({
@@ -16,13 +17,13 @@ M.rainbow_delimiters = function()
           -- lua = 'rainbow-blocks',
         },
         highlight = {
-          'RainbowDelimiterRed',
           'RainbowDelimiterYellow',
           'RainbowDelimiterBlue',
           'RainbowDelimiterOrange',
           'RainbowDelimiterGreen',
           'RainbowDelimiterViolet',
           'RainbowDelimiterCyan',
+          'RainbowDelimiterRed',
         },
       })
     end,

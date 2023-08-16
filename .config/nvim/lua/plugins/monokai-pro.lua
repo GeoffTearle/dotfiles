@@ -9,6 +9,7 @@ M.monokaipro = function()
         transparent_background = false,
         terminal_colors = true,
         devicons = true, -- highlight the icons of `nvim-web-devicons`
+
         styles = {
           comment = { italic = true },
           keyword = { italic = true }, -- any other keyword

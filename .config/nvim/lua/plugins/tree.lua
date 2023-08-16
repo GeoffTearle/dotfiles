@@ -60,6 +60,7 @@ M.neotree = function()
           container = {
             enable_character_fade = true,
           },
+
           indent = {
             indent_size = 2,
             padding = 1, -- extra padding on left hand side
@@ -178,23 +179,6 @@ M.neotree = function()
             hide_dotfiles = false,
             hide_gitignored = true,
             hide_hidden = true, -- only works on Windows for hidden files/directories
-            hide_by_name = {
-              --"node_modules"
-            },
-            hide_by_pattern = { -- uses glob style patterns
-              --"*.meta",
-              --"*/src/*/tsconfig.json",
-            },
-            always_show = { -- remains visible even if other settings would normally hide it
-              --".gitignored",
-            },
-            never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
-              --".DS_Store",
-              --"thumbs.db"
-            },
-            never_show_by_pattern = { -- uses glob style patterns
-              --".null-ls_*",
-            },
           },
           follow_current_file = {
             enabled = false, -- This will find and focus the file in the active buffer every time
@@ -207,7 +191,7 @@ M.neotree = function()
           -- "open_current",  -- netrw disabled, opening a directory opens within the
           -- window like netrw would, regardless of window.position
           -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
-          use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
+          use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
           -- instead of relying on nvim autocmd events.
           window = {
             mappings = {

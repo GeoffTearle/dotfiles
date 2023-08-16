@@ -13,6 +13,7 @@ M.lspconfig = function()
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
+
       require('neodev').setup({
         library = {
           enabled = true, -- when not enabled, neodev will not change any settings to the LSP server
@@ -87,6 +88,7 @@ M.lspconfig = function()
           },
         },
       })
+
       require('lspconfig').golangci_lint_ls.setup({
         capabilities = capabilities,
       })
