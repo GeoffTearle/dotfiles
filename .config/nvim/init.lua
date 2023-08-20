@@ -43,7 +43,6 @@ require('lazy').setup({
 -- Set highlight on search
 vim.o.hlsearch = false
 
--- Make line numbers default
 vim.o.number = true
 vim.o.relativenumber = true
 
@@ -76,7 +75,6 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
 vim.o.showmatch = true  -- Highlight matching parenthesis
@@ -86,8 +84,6 @@ vim.o.autowrite = true  -- Automatically save before :next, :make etc.
 
 -- [[ Basic Keymaps ]]
 
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { noremap = true, silent = true })
 
 -- Remap for dealing with word wrap
@@ -278,11 +274,49 @@ end
 --  define the property 'filetypes' to the map in question.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  gopls = {
+    flags = { debounce_text_changes = 200 },
+    settings = {
+      gopls = {
+        usePlaceholders = true,
+        gofumpt = true,
+        analyses = {
+          nilness = true,
+          unusedparams = true,
+          unusedwrite = true,
+          useany = true,
+        },
+        codelenses = {
+          gc_details = false,
+          generate = true,
+          regenerate_cgo = true,
+          run_govulncheck = true,
+          test = true,
+          tidy = true,
+          upgrade_dependency = true,
+          vendor = true,
+        },
+        experimentalPostfixCompletions = true,
+        completeUnimported = true,
+        staticcheck = true,
+        directoryFilters = { '-.git', '-node_modules' },
+        semanticTokens = true,
+        hints = {
+          assignVariableTypes = true,
+          compositeLiteralFields = true,
+          compositeLiteralTypes = true,
+          constantValues = true,
+          functionTypeParameters = true,
+          parameterNames = true,
+          rangeVariableTypes = true,
+        },
+      },
+    },
+  },
 
   lua_ls = {
     Lua = {
