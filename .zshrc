@@ -41,6 +41,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PAGER="bat --style='changes,rule'"
 
 eval "$(starship init zsh)"
+eval $(thefuck --alias)
 
 
 export PATH="$PATH:$HOME/.antigen/bundles/wfxr/forgit/bin" # cant seem to get the antigen vars to work
@@ -60,3 +61,4 @@ case $(uname) in
 	source /Users/geoffreyt/.docker/init-zsh.sh || true # Added by Docker Desktop
   ;;
 esac
+export PATH=$PATH:/Users/geoffreyt/.spicetify
