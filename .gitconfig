@@ -2,30 +2,46 @@
 	editor = nvim
 	excludesfile = /Users/geoffreyt/.gitignore_global
 	pager = delta
+
 [user]
 	name = Geoff Tearle
 	email = 18473961+GeoffTearle@users.noreply.github.com
+
 [init]
 	defaultBranch = main
+
 [pager]
 	diff = delta
 	log = delta
 	reflog = delta
 	show = delta
+
 [interactive]
 	diffFilter = delta --color-only
-[include]
-	path = ~/dotfiles/delta/.gitconfig
+
 [include]
 	path = ~/.gitconfig.local
+
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
 [pull]
 	rebase = false
+
 [push]
 	autoSetupRemote = true
+
 [diff]
 	algorithm = histogram
 	colorMoved = default
+
 [merge]
 	conflictstyle = diff3
+
+[delta]
+	plus-style = "syntax #012800"
+	minus-style = "syntax #340001"
+	syntax-theme = Monokai Extended
+	navigate = true
+	side-by-side = true
+
