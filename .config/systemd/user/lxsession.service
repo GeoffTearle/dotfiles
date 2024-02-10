@@ -1,7 +1,0 @@
-[Unit]
-Description=lxsession
-PartOf=graphical-session.target
-
-[Service]
-ExecStart=/usr/bin/lxsession --session=i3 --de=i3
-Restart=on-failure
