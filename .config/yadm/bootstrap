@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -eu
+
+# Directory to look for bootstrap executables in
+BOOTSTRAP_D="${BASH_SOURCE[0]}.d"
+
+if [[ ! -d "$BOOTSTRAP_D" ]]; then
+    echo "Error: bootstrap directory '$BOOTSTRAP_D' not found" >&2
+    exit 1
+fi
+
+case $(uname -s) in
+  Linux)
+	  DISTRO=$(awk -F'=' '/^ID=/ {print tolower($2)}' /etc/*-release 2> /dev/null)
+      "$BOOTSTRAP_D/$DISTRO"
+  ;;
+  Darwin)
+      "$BOOTSTRAP_D/mac"
+  ;;
+esac
+
+
