@@ -13,10 +13,10 @@ fi
 case $(uname -s) in
   Linux)
 	  DISTRO=$(awk -F'=' '/^ID=/ {print tolower($2)}' /etc/*-release 2> /dev/null)
-      "$BOOTSTRAP_D/$DISTRO"
+     . "$BOOTSTRAP_D/$DISTRO"
   ;;
   Darwin)
-      "$BOOTSTRAP_D/mac"
+     . "$BOOTSTRAP_D/mac"
   ;;
 esac
 

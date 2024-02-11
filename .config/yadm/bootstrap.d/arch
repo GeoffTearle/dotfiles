@@ -1,40 +1,95 @@
 #!/bin/bash
 
-# contains(string, substring)
+# command_exists(to_check)
 #
-# Returns 0 if the specified string contains the specified substring,
+# Returns 0 if the command matches an installed package, or the command itself exists
 # otherwise returns 1.
 command_exists() {
-    scring="$1"
-    if [ "${string#*"$substring"}" != "$string" ]; then
-        return 0    # $substring is in $string
-    else
-        return 1    # $substring is not in $string
-    fi
+  to_check="$1"
+  if  pacman -Q $to_check > /dev/null || command -v $to_check > /dev/null ; then
+      return 0
+  else
+      return 1
+  fi
 }
 
-# base devel
-if ! pacman -Q base-devel > /dev/null; then
-  sudo pacman --noconfirm -S base-devel
-fi
+pac_install_if_not_exists() {
+  to_check="$1"
+  echo $to_check
+  echo "checking for $to_check"
 
-# git
-if ! command -v git > /dev/null; then
-  sudo pacman --noconfirm -S git
-fi
+  if ! command_exists $to_check; then
+    echo "installing $to_check"
+    sudo pacman --noconfirm -S $to_check
+
+  else
+    echo "$to_check already installed"
+  fi
+  echo ""
+}
+
+install_if_not_exists() {
+  to_check="$1"
+  echo $to_check
+  echo "checking for $to_check"
+
+  if ! command_exists $to_check; then
+    echo "installing $to_check"
+    yay --noconfirm -S $to_check
+
+  else
+    echo "$to_check already installed"
+  fi
+  echo ""
+}
+
+echo "installing packages"
+echo ""
+
+declare -a base_packages=("base-devel" "git")
+for i in "${base_packages[@]}"
+do
+   pac_install_if_not_exists "$i"
+done
 
 # yay
-if ! command -v yay > /dev/null; then
+echo "yay"
+echo "checking for yay"
+if ! command_exists yay; then
+  echo "installing yay"
   cd $HOME
   mkdir -p src && cd src
   git clone https://aur.archlinux.org/yay-bin.git
   cd yay-bin
   makepkg -si
   cd $HOME
+else
+  echo "yay already installed"
 fi
+echo ""
 
+declare -a packages=(
+  "auto-cpufreq"
+  "bat"
+  "doas"
+  "eza"
+  "firefox"
+  "flatpak"
+  "fnm"
+  "git-delta"
+  "glow"
+  "keyd"
+  "neovim"
+  "rate-mirrors-bin"
+  "starship"
+  "thermald"
+  "tree-sitter-cli"
+  "ttf-firacode-nerd"
+  "wezterm"
+  "zsh"
+)
 
-# wezterm
-if ! command -v git > /dev/null; then
-  sudo pacman --noconfirm -S git
-fi
+for i in "${packages[@]}"
+do
+   install_if_not_exists "$i"
+done
