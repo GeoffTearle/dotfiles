@@ -6,7 +6,7 @@
 # otherwise returns 1.
 command_exists() {
   to_check="$1"
-  if  pacman -Q $to_check > /dev/null || command -v $to_check > /dev/null ; then
+  if  pacman -Q $to_check > /dev/null 2>&1 || command -v $to_check > /dev/null 2>&1; then
       return 0
   else
       return 1
@@ -35,7 +35,7 @@ install_if_not_exists() {
 
   if ! command_exists $to_check; then
     echo "installing $to_check"
-    yay --noconfirm -S $to_check
+    gum spin --spinner dot --title "installing $to_check" -- yay --noconfirm -S $to_check
 
   else
     echo "$to_check already installed"
@@ -70,6 +70,7 @@ echo ""
 
 declare -a packages=(
   "auto-cpufreq"
+  "bash-language-server"
   "bat"
   "doas"
   "eza"
@@ -81,14 +82,18 @@ declare -a packages=(
   "glow"
   "just"
   "keyd"
+  "lua-language-server"
   "neovim"
+  "pmbootstrap"
   "rate-mirrors-bin"
-  "rg"
+  "ripgrep"
   "starship"
+  "stylua"
   "thermald"
   "tree-sitter-cli"
   "ttf-firacode-nerd"
   "wezterm"
+  "xdg-desktop-portal-gtk"
   "zsh"
 )
 
