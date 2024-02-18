@@ -18,11 +18,9 @@ fi
 export GNUPGHOME="$DATA_HOME"/gnupg
 
 # go
-export GOPATH="$DATA_HOME"/go
-export GOROOT="$(go env GOROOT)"
-if [ "${PATH#*"$GOPATH"}" == "$PATH" ]; then
-  export PATH="$GOPATH/bin:$PATH";
-fi
+export GOPATH="$DATA_HOME/go";
+export GOROOT="$HOME/.local/bin/go";
+export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 
 # zsh
 export ZDOTDIR="$HOME"/.config/zsh

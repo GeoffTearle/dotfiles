@@ -35,7 +35,7 @@ install_if_not_exists() {
 
   if ! command_exists $to_check; then
     echo "installing $to_check"
-    gum spin --spinner dot --title "installing $to_check" -- yay --noconfirm -S $to_check
+    yay --noconfirm -S $to_check
 
   else
     echo "$to_check already installed"
